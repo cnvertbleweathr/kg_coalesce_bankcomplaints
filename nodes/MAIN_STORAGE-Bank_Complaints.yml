@@ -1,0 +1,77 @@
+fileVersion: 1
+id: 776521f0-1c79-4b73-a626-1b5220605fea
+name: Bank_Complaints
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: MAIN_STORAGE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5af55628-478e-4941-b12e-78c3fc7d2a2f
+          stepCounter: 776521f0-1c79-4b73-a626-1b5220605fea
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: row_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a2b561b-8d35-4019-a508-fdfac99692bc
+          stepCounter: 776521f0-1c79-4b73-a626-1b5220605fea
+        config: {}
+        dataType: VARCHAR(500)
+        defaultValue: ""
+        description: ""
+        name: product
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3303838d-465c-4c30-b100-d9985d11dfce
+          stepCounter: 776521f0-1c79-4b73-a626-1b5220605fea
+        config: {}
+        dataType: VARCHAR(20000)
+        defaultValue: ""
+        description: ""
+        name: narrative
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('MAIN_STORAGE', 'Bank_Complaints') }}
+  name: Bank_Complaints
+  schema: ""
+  sqlType: Source
+  table: Bank_Complaints
+  type: sourceInput
+  version: 1
+type: Node

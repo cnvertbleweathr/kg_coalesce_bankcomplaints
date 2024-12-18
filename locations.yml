@@ -1,4 +1,4 @@
-defaultStorageMapping: null
+defaultStorageMapping: MAIN_STORAGE
 fileVersion: 1
 locations:
   - MAIN_STORAGE

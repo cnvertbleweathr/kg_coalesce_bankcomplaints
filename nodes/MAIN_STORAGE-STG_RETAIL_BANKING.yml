@@ -1,0 +1,82 @@
+fileVersion: 1
+id: 34a05bbe-954a-4b73-a106-f3c310544f4a
+name: STG_RETAIL_BANKING
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: MAIN_STORAGE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84bbd19d-d73b-4a3f-9571-043977ea9fa5
+          stepCounter: 34a05bbe-954a-4b73-a106-f3c310544f4a
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: row_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5af55628-478e-4941-b12e-78c3fc7d2a2f
+                stepCounter: 776521f0-1c79-4b73-a626-1b5220605fea
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16d06a20-6c57-4899-a39b-f0b500b260ff
+          stepCounter: 34a05bbe-954a-4b73-a106-f3c310544f4a
+        config: {}
+        dataType: VARCHAR(500)
+        description: ""
+        name: product
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8a2b561b-8d35-4019-a508-fdfac99692bc
+                stepCounter: 776521f0-1c79-4b73-a626-1b5220605fea
+            transform: CASE WHEN "product" = 'retail_banking' then 'RETAIL BANKING' ELSE "product" END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b72f241-f790-4b2b-8d25-67c73566f8ed
+          stepCounter: 34a05bbe-954a-4b73-a106-f3c310544f4a
+        config: {}
+        dataType: VARCHAR(20000)
+        description: ""
+        name: narrative
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3303838d-465c-4c30-b100-d9985d11dfce
+                stepCounter: 776521f0-1c79-4b73-a626-1b5220605fea
+            transform: UPPER("narrative")
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          Bank_Complaints: 776521f0-1c79-4b73-a626-1b5220605fea
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: MAIN_STORAGE
+            nodeName: Bank_Complaints
+        join:
+          joinCondition: FROM {{ ref('MAIN_STORAGE', 'Bank_Complaints') }} "Bank_Complaints" WHERE "product" = 'retail_banking'
+        name: STG_RETAIL_BANKING
+        noLinkRefs: []
+  name: STG_RETAIL_BANKING
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

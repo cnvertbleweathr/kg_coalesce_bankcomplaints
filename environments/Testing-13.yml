@@ -1,0 +1,8 @@
+fileVersion: 1
+id: "13"
+mappingDefinitions:
+  MAIN_STORAGE:
+    database: COALESCE_KG
+    schema: PUBLIC
+name: Testing
+type: Environment
