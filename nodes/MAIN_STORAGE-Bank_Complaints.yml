@@ -3,7 +3,6 @@ id: 776521f0-1c79-4b73-a626-1b5220605fea
 name: Bank_Complaints
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: MAIN_STORAGE
@@ -66,12 +65,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('MAIN_STORAGE', 'Bank_Complaints') }}
   name: Bank_Complaints
   schema: ""
   sqlType: Source
-  table: Bank_Complaints
   type: sourceInput
   version: 1
 type: Node
